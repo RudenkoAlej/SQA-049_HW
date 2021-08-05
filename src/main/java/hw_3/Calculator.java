@@ -1,6 +1,8 @@
 package hw_3;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -21,7 +23,7 @@ public class Calculator {
 
                 System.out.println("Введите знак дествия с числами: +, -, *, /, ! или командой для выхода \"q\" из программы");
 //            userInput = scanner.nextLine();
-                userInput = reader.readLine();
+                userInput = reader.readLine().trim();
 
                 double result;
 
@@ -86,8 +88,8 @@ public class Calculator {
 
     public static int factorial(int a) {
         int factorial1 = 1;
-        for(int i = 1; i<a; i++) {
-            factorial1 = factorial1*a;
+        for (int i = 2; i < a; i++) {
+            factorial1 = factorial1 * a;
         }
         return factorial1;
     }
