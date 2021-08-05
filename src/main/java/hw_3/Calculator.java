@@ -22,7 +22,8 @@ public class Calculator {
                 int secondValue = scanner.nextInt();
 
                 System.out.println("Введите знак дествия с числами: +, -, *, /, ! или командой для выхода \"q\" из программы");
-//            userInput = scanner.nextLine();
+                // чтобы это работало необходимо вычитать перевод строки от предыдущего ввода. С помощью scanner.nextLine().
+                //            userInput = scanner.nextLine();
                 userInput = reader.readLine().trim();
 
                 double result;
@@ -56,7 +57,7 @@ public class Calculator {
                         result = 0;
                         break;
                 }
-                System.out.printf("Результат : %5.2f \n", result);
+                System.out.printf("Результат : %5.2f %n", result);
             } catch (InputMismatchException e) {
                 System.out.println("Введенный символ не является числом");
                 e.printStackTrace();
@@ -67,23 +68,19 @@ public class Calculator {
 
 
     public static int add(int a, int b) {
-        int sum = a + b;
-        return sum;
+        return a + b;
     }
 
     public static int minus(int a, int b) {
-        int minus = a - b;
-        return minus;
+        return a - b;
     }
 
     public static int multiply(int a, int b) {
-        int multiply = a * b;
-        return multiply;
+        return a * b;
     }
 
     public static float divide(int a, int b) {
-        float divide = (float) a / b;
-        return divide;
+        return (float) a / b;
     }
 
     public static int factorial(int a) {
