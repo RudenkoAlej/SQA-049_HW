@@ -22,8 +22,7 @@ public class Calculator {
                 int secondValue = scanner.nextInt();
 
                 System.out.println("Введите знак дествия с числами: +, -, *, /, ! или командой для выхода \"q\" из программы");
-                scanner.nextLine();  // для вычитания перевода строки от предыдущего ввода.
-                userInput = scanner.nextLine().trim();
+                userInput = scanner.next();
 //                userInput = reader.readLine().trim();
 
                 double result;
