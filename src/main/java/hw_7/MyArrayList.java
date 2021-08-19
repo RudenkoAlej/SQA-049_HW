@@ -3,13 +3,13 @@ package hw_7;
 import java.util.Arrays;
 
 public class MyArrayList<T> {
-    private int INIT_SIZE = 16;
+    private int init_size = 16;
     private final int CUT_RATE = 4;
-    private Object[] array = new Object[INIT_SIZE];
+    private Object[] array = new Object[init_size];
     private int pointer = 0;
 
     public void add (T item) {
-        if (array.length == INIT_SIZE) {
+        if (array.length == init_size) {
             resize((int) (array.length * 1.5));
         }
         array[pointer++] = item;
@@ -30,14 +30,14 @@ public class MyArrayList<T> {
         }
         array[pointer] = null;
         pointer--;
-        if (array.length > INIT_SIZE && pointer < array.length/CUT_RATE) {
+        if (array.length > init_size && pointer < array.length/CUT_RATE) {
             resize(array.length/2);
         }
     }
 
     public void resize(int newSize) {
         array = Arrays.copyOf(array, newSize);
-        INIT_SIZE = newSize;
+        init_size = newSize;
     }
 
  }
